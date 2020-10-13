@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import './ToDoCreate.module.css';
 
 const ToDoCreate = (props) => {
 
@@ -14,7 +15,9 @@ const ToDoCreate = (props) => {
             id: Date.now(),
             title: title,
         };
-        props.setTodoList([...props.todoList, todo]);
+        if (title.trim() !== '') {
+            props.setTodoList([...props.todoList, todo]);
+        }
         setTitle('');
     };
 
