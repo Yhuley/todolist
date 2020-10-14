@@ -1,9 +1,9 @@
-form {
+.todoForm {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-form input {
+.todoInput {
     background-color: whitesmoke;
     font-size: 15px;
     height: 50px;
@@ -13,7 +13,7 @@ form input {
     border: none;
 }
 
-form button {
+.todoSubmit {
     color: whitesmoke;
     width: 100px;
     height: 50px;

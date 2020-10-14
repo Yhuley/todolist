@@ -1,32 +1,32 @@
-import React, {useState} from "react";
-import './ToDoCreate.module.css';
+import React, {useState} from "react"
+import s from './ToDoCreate.module.css'
 
 const ToDoCreate = (props) => {
 
-    const [title, setTitle] = useState('');
+    const [title, setTitle] = useState('')
 
     const titleHandler = (event) => {
-        setTitle(event.target.value);
-    };
+        setTitle(event.target.value)
+    }
 
     const formHandler = (event) => {
-        event.preventDefault();
-        let todo = {
+        event.preventDefault()
+        const todo = {
             id: Date.now(),
             title: title,
-        };
-        if (title.trim() !== '') {
-            props.setTodoList([...props.todoList, todo]);
         }
-        setTitle('');
-    };
+        if (title.trim().length >= 1) {
+            props.setTodoList([...props.todoList, todo])
+        }
+        setTitle('')
+    }
 
     return (
-        <form onSubmit={formHandler}>
-            <input type="text" placeholder="Enter smth..." onChange={titleHandler} value={title}></input>
-            <button type="submit">Submit</button>
+        <form className={s.todoForm} onSubmit={formHandler}>
+            <input className={s.todoInput} type="text" placeholder="Enter smth..." onChange={titleHandler} value={title} />
+            <button className={s.todoSubmit} type="submit">Submit</button>
         </form>
-    );
+    )
 }
 
-export default ToDoCreate;
+export default ToDoCreate

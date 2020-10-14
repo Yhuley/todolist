@@ -1,21 +1,21 @@
-ul {
+.todosList {
     list-style: none;
     word-break: break-word;
     display: flex;
     flex-direction: column-reverse;
 }
 
-ul div {
+.todosItem {
     margin-bottom: 15px;
 }
 
-ul li {
+.todoTitle {
     color: whitesmoke;
     text-shadow: 1px 1px 2px black;
     padding-bottom: 5px;
 }
 
-ul button {
+.todoDelete {
     border: 1px solid whitesmoke;
     background-color: inherit;
     color: whitesmoke;
